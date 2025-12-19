@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer | Cyber Security Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🔐</span>
+                <h1>CYBER VAULT</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Password Analyzer Card -->
+            <section class="card analyzer-card">
+                <div class="card-header">
+                    <h2>Password Strength Analyzer</h2>
+                    <p class="subtitle">Real-time security assessment</p>
+                </div>
+
+                <div class="input-container">
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="passwordInput" 
+                            placeholder="Enter password to analyze..."
+                            class="password-input"
+                            autocomplete="off"
+                        >
+                        <button class="toggle-visibility" id="toggleVisibility" aria-label="Toggle password visibility">
+                            <span class="visibility-icon">👁️</span>
+                        </button>
+                        <button class="copy-button" id="copyButton" aria-label="Copy password">
+                            <span class="copy-icon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CREATE PASS Button -->
+                <button class="create-pass-button" id="createPassButton">
+                    <span class="button-text">CREATE PASS</span>
+                    <div class="button-glow"></div>
+                </button>
+
+                <!-- Strength Meter -->
+                <div class="strength-meter-container">
+                    <div class="strength-label">
+                        <span>Strength</span>
+                        <span id="strengthText" class="strength-value">Not Analyzed</span>
+                    </div>
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                        <div class="strength-glow" id="strengthGlow"></div>
+                    </div>
+                </div>
+
+                <!-- Analysis Results -->
+                <div class="analysis-results" id="analysisResults">
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="metric-label">Length</span>
+                            <span id="lengthMetric" class="metric-value">0</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Entropy</span>
+                            <span id="entropyMetric" class="metric-value">0 bits</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Crack Time</span>
+                            <span id="crackTimeMetric" class="metric-value">Instant</span>
+                        </div>
+                    </div>
+
+                    <div class="character-types">
+                        <div class="char-type" id="uppercaseCheck">
+                            <span class="char-icon">🔠</span>
+                            <span>Uppercase</span>
+                        </div>
+                        <div class="char-type" id="lowercaseCheck">
+                            <span class="char-icon">🔡</span>
+                            <span>Lowercase</span>
+                        </div>
+                        <div class="char-type" id="numbersCheck">
+                            <span class="char-icon">🔢</span>
+                            <span>Numbers</span>
+                        </div>
+                        <div class="char-type" id="symbolsCheck">
+                            <span class="char-icon">⚡</span>
+                            <span>Symbols</span>
+                        </div>
+                    </div>
+
+                    <div class="warnings" id="warnings">
+                        <!-- Warnings will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="card info-card">
+                <div class="card-header">
+                    <h3>Security Guidelines</h3>
+                </div>
+                <div class="guidelines">
+                    <div class="guideline">
+                        <span class="guideline-icon">🛡️</span>
+                        <div class="guideline-content">
+                            <h4>Use Strong Passwords</h4>
+                            <p>Minimum 16 characters with mixed types</p>
+                        </div>
+                    </div>
+                    <div class="guideline">
+                        <span class="guideline-icon">🔄</span>
+                        <div class="guideline-content">
+                            <h4>Unique for Each Service</h4>
+                            <p>Never reuse passwords across different accounts</p>
+                        </div>
+                    </div>
+                    <div class="guideline">
+                        <span class="guideline-icon">🔐</span>
+                        <div class="guideline-content">
+                            <h4>Client-Side Only</h4>
+                            <p>Your passwords never leave this device</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🔒 100% Offline • No Data Transmission • Client-Side Security</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Password copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
